@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUAL É A PALAVRA?</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+    .audio-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #121212;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+    }
+    .audio-overlay button {
+        padding: 20px 40px;
+        font-size: 1.5em;
+        background-color: #00bcd4;
+        color: #1e1e1e;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+    .oculto-inicial {
+        display: none !important; /* Esconde o container principal até o clique */
+    }
+    </style>
+</head>
+<body>
+    
+    <div id="audio-overlay" class="audio-overlay">
+        <button id="btn-iniciar-audio">CLIQUE AQUI PARA INICIAR (Permitir Áudio)</button>
+    </div>
+    
+    <div class="container oculto-inicial"> 
+        <h1>Adivinhe a Palavra DEV!</h1>
+        <p>Tente adivinhar a letra. Você tem <span id="tentativas">6</span> chances!</p>
+        <p>Pontuação: <span id="pontuacao-display">0</span></p>
+
+        <div id="palavra-display" class="palavra-display"></div>
+
+        <div class="palpite-area">
+            <input type="text" id="input-palpite" maxlength="1" placeholder="Digite uma letra" autofocus>
+            <button id="btn-palpite">Tentar</button>
+        </div>
+
+        <p id="mensagem" class="mensagem"></p>
+        <p>Letras tentadas: <span id="letras-usadas"></span></p>
+
+        <button id="btn-reiniciar" class="oculto">Novo Jogo</button>
+        
+        <div id="ranking-area">
+            <h2>Ranking Local</h2>
+            <ul id="lista-ranking">
+                </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

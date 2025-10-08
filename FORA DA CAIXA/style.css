@@ -1,0 +1,131 @@
+/* --- DARK MODE BASE --- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212; /* Fundo escuro */
+    color: #e0e0e0; /* Texto claro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: #1e1e1e; /* Contêiner ligeiramente mais claro */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    width: 90%;
+    max-width: 550px;
+    margin: 20px 0;
+    border: 1px solid #333; /* Borda sutil */
+}
+
+h1 {
+    color: #00bcd4; /* Ciano vibrante para destaque */
+    margin-bottom: 15px;
+}
+
+/* --- EXIBIÇÃO E ENTRADAS --- */
+
+.palavra-display {
+    font-size: 2.5em;
+    letter-spacing: 12px;
+    margin: 40px 0;
+    font-weight: bold;
+    color: #ffffff; 
+    min-height: 50px;
+}
+
+.palpite-area input,
+.palpite-area button {
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 1.1em;
+    margin: 5px;
+}
+
+.palpite-area input {
+    width: 70px;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: #333;
+    color: #e0e0e0;
+    border: 1px solid #555;
+}
+
+.palpite-area button {
+    background-color: #00bcd4;
+    color: #1e1e1e; 
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.palpite-area button:hover:not(:disabled) {
+    background-color: #0097a7;
+}
+
+/* --- MENSAGENS E FEEDBACK --- */
+
+.mensagem {
+    font-weight: bold;
+    margin: 15px 0;
+    font-size: 1.1em;
+}
+
+.mensagem.sucesso { color: #8bc34a; } 
+.mensagem.erro { color: #ff9800; } 
+.mensagem.vitoria { color: #00bcd4; } 
+.mensagem.derrota { color: #e53935; } 
+
+#btn-reiniciar {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 25px;
+    font-size: 1.1em;
+    border-radius: 6px;
+}
+
+#btn-reiniciar.oculto {
+    display: none;
+}
+
+/* --- ESTILO DO RANKING --- */
+#ranking-area {
+    margin-top: 40px;
+    border-top: 1px solid #333;
+    padding-top: 20px;
+}
+
+#lista-ranking {
+    list-style: none;
+    padding: 0;
+}
+
+#lista-ranking li {
+    background-color: #2a2a2a;
+    padding: 8px;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 500;
+}
+
+/* --- ANIMAÇÃO DE ERRO (SHAKE) --- */
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-10px); }
+    40%, 80% { transform: translateX(10px); }
+}
+
+.container.erro-animacao {
+    animation: shake 0.4s ease-in-out;
+    border: 2px solid #e53935; 
+}
